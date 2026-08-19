@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LEKAI Picks — smart small appliances and kitchen gadgets worth checking out on Amazon.">
+<title>LEKAI Picks — Smart Small Appliances</title>
+<style>
+:root{
+  --bg:#f7f5f0; --card:#fff; --text:#171717; --muted:#777;
+  --line:#e8e4dc; --accent:#ff6b35; --accent2:#111;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+header{padding:24px 0 10px}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:28px;font-weight:900;letter-spacing:-1.5px}
+.logo span{color:var(--accent)}
+.badge{font-size:12px;font-weight:700;background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:999px}
+.hero{padding:48px 0 34px;display:grid;grid-template-columns:1.25fr .75fr;gap:35px;align-items:center}
+.kicker{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:var(--accent)}
+h1{font-size:clamp(42px,6vw,76px);line-height:.95;letter-spacing:-4px;margin:12px 0 18px}
+.hero p{font-size:18px;line-height:1.55;color:var(--muted);max-width:620px}
+.hero-art{min-height:280px;border-radius:32px;background:linear-gradient(135deg,#fff 0%,#f0ebe2 100%);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-art .orb{width:210px;height:210px;border-radius:50%;background:#fff;box-shadow:0 25px 60px #0001;display:flex;align-items:center;justify-content:center;font-size:78px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin:20px 0 18px}
+.section-head h2{font-size:28px;letter-spacing:-1px;margin:0}
+.section-head p{margin:0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-bottom:45px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.2s transform,.2s box-shadow}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 35px #0000000d}
+.pic{height:220px;background:#f3f1ec;display:flex;align-items:center;justify-content:center;padding:18px}
+.pic img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.body{padding:18px}
+.tag{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800;color:var(--accent)}
+.card h3{font-size:18px;line-height:1.15;margin:8px 0}
+.desc{font-size:13px;line-height:1.45;color:var(--muted);min-height:57px}
+.rating{font-size:13px;margin:10px 0 14px}
+.rating b{color:#f39a19}
+.btn{display:block;text-align:center;background:var(--accent2);color:white;padding:12px 14px;border-radius:12px;font-weight:800;font-size:13px}
+.btn:hover{background:var(--accent)}
+footer{border-top:1px solid var(--line);padding:25px 0 40px;color:#8a877f;font-size:11px;line-height:1.6}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.pic{height:240px}h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="nav">
+    <div class="logo">LEKAI<span>.</span></div>
+    <div class="badge">AMAZON PICKS</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Smart finds · Less clutter</div>
+    <h1>Small appliances<br>worth your counter space.</h1>
+    <p>We pick practical, popular kitchen helpers that make everyday cooking faster, easier, or simply more fun.</p>
+  </div>
+  <div class="hero-art"><div class="orb">✦</div></div>
+</section>
+
+<div class="section-head">
+  <h2>Trending right now</h2>
+  <p>Updated picks · Tap to shop on Amazon</p>
+</div>
+
+<main id="products" class="grid"></main>
+
+<footer>
+  As an Amazon Associate, LEKAI earns from qualifying purchases. Product availability, pricing, ratings and promotions can change on Amazon.
+</footer>
+</div>
+
+<script>
+/*
+  ============================
+  LEKAI AMAZON AFFILIATE SETUP
+  ============================
+  1. Replace YOURTAG-20 with your Amazon Associates tracking ID.
+  2. Deploy this file to GitHub / Vercel.
+*/
+const AFFILIATE_TAG = "YOURTAG-20";
+
+const products = [
+  {
+    asin:"B0C33CHG99",
+    title:"COSORI 9-in-1 TurboBlaze Air Fryer 6 Qt",
+    tag:"🔥 Hot Pick",
+    desc:"Fast countertop cooking with air fry, roast, bake, broil, dry and reheat modes.",
+    rating:"4.8",
+    image:"https://images-na.ssl-images-amazon.com/images/P/B0C33CHG99.01.L.jpg"
+  },
+  {
+    asin:"B08R6KMBQT",
+    title:"Instant Vortex Plus 4QT Mini Air Fryer",
+    tag:"Best Value",
+    desc:"Compact 6-in-1 air fryer for smaller kitchens, apartments and quick everyday meals.",
+    rating:"4.6",
+    image:"https://images-na.ssl-images-amazon.com/images/P/B08R6KMBQT.01.L.jpg"
+  },
+  {
+    asin:"B09HSWBTN4",
+    title:"Cuisinart Air Fryer Toaster Oven",
+    tag:"Multi-Tasker",
+    desc:"Air fry, convection bake, broil and warm in one countertop appliance.",
+    rating:"4.4",
+    image:"https://images-na.ssl-images-amazon.com/images/P/B09HSWBTN4.01.L.jpg"
+  },
+  {
+    asin:"B09X3WGJ3R",
+    title:"CASABREWS Compact Espresso Machine",
+    tag:"☕ Coffee",
+    desc:"A compact espresso setup with a steam wand for cappuccinos and lattes.",
+    rating:"4.3",
+    image:"https://images-na.ssl-images-amazon.com/images/P/B09X3WGJ3R.01.L.jpg"
+  },
+  {
+    asin:"B00CH9QWOU",
+    title:"Breville Barista Express Espresso Machine",
+    tag:"Premium Pick",
+    desc:"A popular all-in-one espresso machine for people ready to upgrade their home coffee.",
+    rating:"4.5",
+    image:"https://images-na.ssl-images-amazon.com/images/P/B00CH9QWOU.01.L.jpg"
+  },
+  {
+    asin:"B00S93EQUK",
+    title:"Alpha Grillers Instant Read Meat Thermometer",
+    tag:"Kitchen Essential",
+    desc:"Fast temperature checks for grilling, roasting, air frying and everyday cooking.",
+    rating:"4.8",
+    image:"https://images-na.ssl-images-amazon.com/images/P/B00S93EQUK.01.L.jpg"
+  },
+  {
+    asin:"B07PZF3QS3",
+    title:"KitchenAid All-Purpose Kitchen Shears",
+    tag:"Everyday Favorite",
+    desc:"A simple, highly useful kitchen tool for packages, herbs, poultry and prep.",
+    rating:"4.8",
+    image:"https://images-na.ssl-images-amazon.com/images/P/B07PZF3QS3.01.L.jpg"
+  },
+  {
+    asin:"B0CJF94M8J",
+    title:"TrendPlain 2-in-1 Olive Oil Sprayer",
+    tag:"Air Fryer Companion",
+    desc:"A handy oil dispenser and sprayer for salads, roasting, grilling and air frying.",
+    rating:"4.6",
+    image:"https://images-na.ssl-images-amazon.com/images/P/B0CJF94M8J.01.L.jpg"
+  }
+];
+
+function amazonLink(asin){
+  return `https://www.amazon.com/dp/${asin}?tag=${encodeURIComponent(AFFILIATE_TAG)}`;
+}
+
+const grid = document.getElementById("products");
+
+grid.innerHTML = products.map(p => `
+  <article class="card">
+    <div class="pic">
+      <img src="${p.image}" alt="${p.title}" loading="lazy"
+           onerror="this.style.display='none'">
+    </div>
+    <div class="body">
+      <div class="tag">${p.tag}</div>
+      <h3>${p.title}</h3>
+      <div class="desc">${p.desc}</div>
+      <div class="rating"><b>★</b> ${p.rating} shopper rating</div>
+      <a class="btn" href="${amazonLink(p.asin)}" target="_blank" rel="nofollow sponsored noopener">View on Amazon →</a>
+    </div>
+  </article>
+`).join("");
+</script>
+</body>
+</html>
